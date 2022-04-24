@@ -4,3 +4,43 @@ body {
   margin: 30px;
   font-family: "Poppins";
 }
+
+.grid-container {
+  background: #eee;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  /* grid-template-columns: 300px 300px 300px; */
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px 100px 200px;
+  grid-gap: 10px;
+  justify-items: stretch; /* default is stretch */
+  align-items: stretch; /* default is stretch */
+}
+.grid-container > div {
+  background: #ccc;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #777;
+}
+.grid-container > div:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+.grid-container > div:nth-child(2) {
+  grid-column: span 3;
+}
+.grid-container > div:nth-child(3) {
+  /* grid-column: span 1; */ /* auto spans 1 without declaring it */
+}
+.grid-container > div:nth-child(4) {
+  grid-column: 2 / 6;
+  align-self: end;
+}
+.grid-container > div:nth-child(5) {
+  grid-column: span 3;
+}
+.grid-container > div:nth-child(6) {
+  grid-column: span 3;
+  justify-self: end;
+  align-self: start;
+}

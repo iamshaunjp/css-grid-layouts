@@ -5,3 +5,68 @@ body {
   font-family: "Poppins";
   background: #f5f5f5;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+header {
+  padding: 20px 40px;
+  background: white;
+  align-items: center;
+}
+header h1 {
+  grid-column: span 6;
+}
+header nav {
+  grid-column: 7 / span 6;
+  justify-self: end;
+}
+header nav a {
+  color: #333;
+  margin-left: 10px;
+  text-decoration: none;
+}
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+main img {
+  grid-column: span 6;
+  width: 100%;
+  border-radius: 6px;
+}
+main .welcome {
+  grid-column: 8 / span 5;
+}
+main > h2 {
+  grid-column: span 12;
+  text-align: center;
+  font-size: 1.5em;
+  padding-top: 20px;
+}
+main .card {
+  grid-column: span 4;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
+}
+
+@media screen and (max-width: 960px) {
+  main img {
+    grid-column: 2 / span 10;
+  }
+  main .welcome {
+    grid-column: 3 / span 8;
+    text-align: center;
+  }
+  main .card {
+    grid-column: 3 / span 8;
+  }
+  main {
+    justify-items: center;
+  }
+}
