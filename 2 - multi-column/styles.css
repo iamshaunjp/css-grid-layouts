@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap');
 
 body {
+  font-size: 16px;
   margin: 20px;
   font-family: "Poppins";
   background: #d1dedd;
@@ -14,4 +15,42 @@ h1,h2,h3 {
 }
 p {
   color: #828b8a;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  
+}
+.feature{
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+img{
+  width: 100%;
+  border: 5px solid #fff;
+  border-radius: 10px;
+}
+
+@media screen and (max-width:760px) {
+    article{
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      font-size: 0.8rem;
+    }
+}
+@media screen and (max-width:550px) {
+  article{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .feature{
+    grid-template-columns: 1fr;
+  }
+  
 }
